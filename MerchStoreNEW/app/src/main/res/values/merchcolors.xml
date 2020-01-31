@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="black">black</string>
+    <string name="white">white</string>
+    <string name="grey">grey</string>
+    <string name="denim">denim</string>
+    <string name="red">red</string>
+    <string name="blue">blue</string>
+    <string name="maroon">maroon</string>
+    <string name="olive">olive</string>
+    <string name="tan">tan</string>
+    <string name="cream">cream</string>
+</resources>
