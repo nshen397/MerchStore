@@ -21,9 +21,6 @@ public class Item implements Parcelable
         m_price = price;
     }
 
-    public Item()
-    {}
-
     public String  getType()
     {return m_type;}
 
@@ -51,14 +48,17 @@ public class Item implements Parcelable
     public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
         public Item createFromParcel(Parcel in) {
             String parcel = in.readString();
+            String splitParcel[];
             String type = "";
             String color = "";
             String size = "";
             double price = 0.0;
-
-            for(int i = 0; i<parcel.length()-1;i++)
-            {}
-            return new Item();
+            splitParcel = parcel.split(",");
+            type = splitParcel[0];
+            color = splitParcel[1];
+            size = splitParcel[2];
+            price = Double.parseDouble(splitParcel[3]);
+            return  new Item(type,color,size,price);
         }
 
         public Item[] newArray(int size) {
@@ -68,5 +68,5 @@ public class Item implements Parcelable
 
     @Override
     public  String toString()
-    {return m_color + " " + m_type + "Size: " + m_size + " (" + m_format.format(m_price) + ")";}
+    {return m_color + " " + m_type + " Size: " + m_size + " (" + m_format.format(m_price) + ")";}
 }

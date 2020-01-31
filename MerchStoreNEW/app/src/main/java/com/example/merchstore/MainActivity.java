@@ -29,11 +29,10 @@ public class MainActivity extends AppCompatActivity {
             m_bundle = intent.getBundleExtra("MAINCARTBUNDLE");
             if(m_bundle!=null) {
                 m_cost = m_bundle.getDouble("GRANDCOST", 00.00);
+                int i = m_bundle.getInt("COUNTBUNDLE");
             }
         }
-
         price.setText(m_format.format(m_cost));
-
     }
 
     public void openShirt(View view) {
@@ -44,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void openPant(View view) {
         Intent intent = new Intent(this, PantActivity.class);
+        intent.putExtra("MAINCARTBUNDLE", m_bundle);
+        startActivity(intent);
+    }
+
+    public void openCart(View view) {
+        Intent intent = new Intent(this, CartActivity.class);
         intent.putExtra("MAINCARTBUNDLE", m_bundle);
         startActivity(intent);
     }

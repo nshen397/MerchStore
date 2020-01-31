@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PantActivity"></activity>
+        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".PantActivity" />
         <activity android:name=".ShirtActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
