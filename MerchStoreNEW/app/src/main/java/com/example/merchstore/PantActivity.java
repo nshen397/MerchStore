@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class PantActivity extends AppCompatActivity {
 
     private DecimalFormat m_format = new DecimalFormat("$00.00");
+    private DecimalFormat m_doubleFormat = new DecimalFormat("00.00");
     private  double m_cost = 00.00;
     private Bundle m_bundle;
     private Spinner jColor;
@@ -49,7 +50,7 @@ public class PantActivity extends AppCompatActivity {
                 m_bundle = new Bundle();
             }
         }
-//        updatePrice();
+        updatePrice();
 
     }
 
@@ -99,16 +100,16 @@ public class PantActivity extends AppCompatActivity {
 
     public void addJean(View view) {
         m_cost += 54.99;
-        int key =  m_bundle.getInt("COUNTBUNDLE")+1;
-        m_bundle.putParcelable("Item" + m_bundle.getInt(key+""),new Item("Jean",jColor.getSelectedItem().toString(),jSize.getSelectedItem().toString(),54.99));
+        String key =  "Item" + (m_bundle.getInt("COUNTBUNDLE")+1);
+        m_bundle.putParcelable(key,new Item("Jean",jColor.getSelectedItem().toString(),jSize.getSelectedItem().toString(),54.99));
         m_bundle.putInt("COUNTBUNDLE", m_bundle.getInt("COUNTBUNDLE")+1);
         updatePrice();
     }
 
     public void addChino(View view) {
         m_cost += 59.99;
-        int key =  m_bundle.getInt("COUNTBUNDLE")+1;
-        m_bundle.putParcelable("Item" + m_bundle.getInt(key+""),new Item("Chinos",jColor.getSelectedItem().toString(),jSize.getSelectedItem().toString(),59.99));
+        String key =  "Item" + (m_bundle.getInt("COUNTBUNDLE")+1);
+        m_bundle.putParcelable(key,new Item("Chinos",jColor.getSelectedItem().toString(),jSize.getSelectedItem().toString(),59.99));
         m_bundle.putInt("COUNTBUNDLE", m_bundle.getInt("COUNTBUNDLE")+1);
         updatePrice();
     }
@@ -117,6 +118,7 @@ public class PantActivity extends AppCompatActivity {
     {
         m_bundle.putDouble("GRANDCOST" , m_cost);
         TextView price = findViewById(R.id.pantPriceText);
+        m_cost = Double.parseDouble(m_doubleFormat.format(m_cost));
         price.setText(String.format(m_format.format(m_cost)));
     }
 }

@@ -57,19 +57,70 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="75dp"
         android:background="#FFFFFF"
+        android:textAlignment="center"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="27" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Back"
         android:onClick="goBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="@+id/cartText"
         app:layout_constraintTop_toBottomOf="@+id/cartText" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="clearCart"
+        android:text="Clear All"
+        app:layout_constraintEnd_toEndOf="@+id/cartText"
+        app:layout_constraintTop_toBottomOf="@+id/cartText" />
+
+    <Button
+        android:id="@+id/upItemButton"
+        android:layout_width="39dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="▲"
+        android:onClick="itemUp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cartText"
+        app:layout_constraintTop_toTopOf="@+id/cartText" />
+
+    <Button
+        android:id="@+id/downItemButton"
+        android:layout_width="39dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="▼"
+        android:onClick="itemDown"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cartText"
+        app:layout_constraintTop_toBottomOf="@+id/rmItemButton" />
+
+    <Button
+        android:id="@+id/rmItemButton"
+        android:layout_width="39dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="X"
+        android:onClick="itemRm"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cartText"
+        app:layout_constraintTop_toBottomOf="@+id/upItemButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

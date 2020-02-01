@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class ShirtActivity extends AppCompatActivity {
 
     private DecimalFormat m_format = new DecimalFormat("$00.00");
+    private DecimalFormat m_doubleFormat = new DecimalFormat("00.00");
     private  double m_cost = 00.00;
     private Bundle m_bundle;
     private Spinner tColor;
@@ -59,16 +60,16 @@ public class ShirtActivity extends AppCompatActivity {
 
     public void addTee(View view) {
         m_cost += 14.99;
-        int key =  m_bundle.getInt("COUNTBUNDLE")+1;
-        m_bundle.putParcelable("Item" + m_bundle.getInt(key+""),new Item("Tee",tColor.getSelectedItem().toString(),tSize.getSelectedItem().toString(),59.99));
+        String key =  "Item" + (m_bundle.getInt("COUNTBUNDLE")+1);
+        m_bundle.putParcelable(key,new Item("Tee",tColor.getSelectedItem().toString(),tSize.getSelectedItem().toString(),14.99));
         m_bundle.putInt("COUNTBUNDLE", m_bundle.getInt("COUNTBUNDLE")+1);
         updatePrice();
     }
 
     public void addLong(View view) {
         m_cost += 19.99;
-        int key =  m_bundle.getInt("COUNTBUNDLE")+1;
-        m_bundle.putParcelable("Item" + m_bundle.getInt(key+""),new Item("Long",lColor.getSelectedItem().toString(),lSize.getSelectedItem().toString(),59.99));
+        String key =  "Item" + (m_bundle.getInt("COUNTBUNDLE")+1);
+        m_bundle.putParcelable(key,new Item("Long",lColor.getSelectedItem().toString(),lSize.getSelectedItem().toString(),19.99));
         m_bundle.putInt("COUNTBUNDLE", m_bundle.getInt("COUNTBUNDLE")+1);
         updatePrice();
     }
@@ -123,6 +124,7 @@ public class ShirtActivity extends AppCompatActivity {
     {
         m_bundle.putDouble("GRANDCOST" , m_cost);
         TextView price = findViewById(R.id.shirtPriceText);
+        m_cost = Double.parseDouble(m_doubleFormat.format(m_cost));
         price.setText(String.format(m_format.format(m_cost)));
     }
 }
