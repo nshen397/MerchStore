@@ -18,7 +18,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView36"
-        app:layout_constraintTop_toBottomOf="@+id/jColorSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/sColorSpinner" />
 
     <TextView
         android:id="@+id/textView36"
@@ -33,7 +33,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jColorSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/sColorSpinner" />
 
     <TextView
         android:id="@+id/textView33"
@@ -46,8 +46,8 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/jColorSpinner"
-        app:layout_constraintTop_toTopOf="@+id/jColorSpinner" />
+        app:layout_constraintEnd_toStartOf="@+id/sColorSpinner"
+        app:layout_constraintTop_toTopOf="@+id/sColorSpinner" />
 
     <TextView
         android:id="@+id/textView34"
@@ -60,8 +60,8 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/cColorSpinner"
-        app:layout_constraintTop_toTopOf="@+id/jColorSpinner" />
+        app:layout_constraintEnd_toStartOf="@+id/hColorSpinner"
+        app:layout_constraintTop_toTopOf="@+id/sColorSpinner" />
 
     <TextView
         android:id="@+id/textView32"
@@ -74,8 +74,8 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/cSizeSpinner"
-        app:layout_constraintTop_toTopOf="@+id/cSizeSpinner" />
+        app:layout_constraintEnd_toStartOf="@+id/hSizeSpinner"
+        app:layout_constraintTop_toTopOf="@+id/hSizeSpinner" />
 
     <TextView
         android:id="@+id/textView31"
@@ -88,27 +88,27 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/jSizeSpinner"
-        app:layout_constraintTop_toTopOf="@+id/jSizeSpinner" />
+        app:layout_constraintEnd_toStartOf="@+id/sSizeSpinner"
+        app:layout_constraintTop_toTopOf="@+id/sSizeSpinner" />
 
     <Spinner
-        android:id="@+id/cColorSpinner"
+        android:id="@+id/hColorSpinner"
         android:layout_width="87dp"
         android:layout_height="41dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="39dp"
         android:background="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/jSizeSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/cSizeSpinner" />
+        app:layout_constraintStart_toEndOf="@+id/sSizeSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/hSizeSpinner" />
 
     <Spinner
-        android:id="@+id/jColorSpinner"
+        android:id="@+id/sColorSpinner"
         android:layout_width="87dp"
         android:layout_height="41dp"
         android:layout_marginTop="39dp"
         android:background="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/jSizeSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/jSizeSpinner" />
+        app:layout_constraintStart_toStartOf="@+id/sSizeSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/sSizeSpinner" />
 
     <TextView
         android:id="@+id/textView29"
@@ -153,7 +153,7 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/pantPriceText"
+        app:layout_constraintEnd_toStartOf="@+id/jacketPriceText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -182,7 +182,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/pantPriceText"
+        android:id="@+id/jacketPriceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -194,7 +194,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/jeanButton"
+        android:id="@+id/sAddButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
@@ -207,14 +207,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
     <Button
-        android:id="@+id/chinoButton"
+        android:id="@+id/hAddButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="83dp"
         android:layout_marginTop="10dp"
         android:onClick="addChino"
         android:text="Add"
-        app:layout_constraintStart_toEndOf="@+id/jeanButton"
+        app:layout_constraintStart_toEndOf="@+id/sAddButton"
         app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
     <Button
@@ -226,10 +226,10 @@
         android:text="Back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chinoButton" />
+        app:layout_constraintTop_toBottomOf="@+id/hAddButton" />
 
     <Spinner
-        android:id="@+id/jSizeSpinner"
+        android:id="@+id/sSizeSpinner"
         android:layout_width="87dp"
         android:layout_height="41dp"
         android:layout_marginStart="70dp"
@@ -241,13 +241,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <Spinner
-        android:id="@+id/cSizeSpinner"
+        android:id="@+id/hSizeSpinner"
         android:layout_width="87dp"
         android:layout_height="41dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="14dp"
         android:background="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/jSizeSpinner"
+        app:layout_constraintStart_toEndOf="@+id/sSizeSpinner"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

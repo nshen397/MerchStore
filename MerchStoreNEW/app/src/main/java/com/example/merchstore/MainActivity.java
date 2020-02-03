@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        price = findViewById(R.id.mainCostText);
+        price = findViewById(R.id.subCostText);
 
         Intent intent = getIntent();
         if(intent != null)
@@ -49,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void openCart(View view) {
         Intent intent = new Intent(this, CartActivity.class);
+        intent.putExtra("MAINCARTBUNDLE", m_bundle);
+        startActivity(intent);
+    }
+
+    public void openJacket(View view) {
+        Intent intent = new Intent(this, JacketActivity.class);
+        intent.putExtra("MAINCARTBUNDLE", m_bundle);
+        startActivity(intent);
+    }
+
+    public void openCheckout(View view) {
+        Intent intent = new Intent(this, CheckoutActivity.class);
         intent.putExtra("MAINCARTBUNDLE", m_bundle);
         startActivity(intent);
     }

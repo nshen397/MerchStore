@@ -14,6 +14,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="200dp"
         android:text="Jackets"
+        android:onClick="openJacket"
         app:layout_constraintStart_toEndOf="@+id/pantButton"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +25,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="40dp"
         android:text="Checkout"
+        android:onClick="openCheckout"
         app:layout_constraintStart_toEndOf="@+id/cartButton"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -72,11 +74,11 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/mainCostText"
+        app:layout_constraintEnd_toStartOf="@+id/subCostText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/mainCostText"
+        android:id="@+id/subCostText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

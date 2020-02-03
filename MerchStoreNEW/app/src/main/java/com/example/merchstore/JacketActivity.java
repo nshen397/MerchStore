@@ -12,32 +12,32 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class PantActivity extends AppCompatActivity {
+public class JacketActivity extends AppCompatActivity {
 
     private DecimalFormat m_format = new DecimalFormat("$00.00");
     private DecimalFormat m_doubleFormat = new DecimalFormat("00.00");
     private  double m_cost = 00.00;
     private Bundle m_bundle;
-    private Spinner jColor;
-    private Spinner jSize;
-    private Spinner cColor;
-    private Spinner cSize;
+    private Spinner sColor;
+    private Spinner sSize;
+    private Spinner hColor;
+    private Spinner hSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pant);
+        setContentView(R.layout.activity_jacket);
 
-        jColor = findViewById(R.id.sColorSpinner);
-        setJColorSpinner();
-        cColor = findViewById(R.id.hColorSpinner);
-        setCColorSpinner();
-        jSize = findViewById(R.id.sSizeSpinner);
-        cSize = findViewById(R.id.hSizeSpinner);
+        sColor = findViewById(R.id.sColorSpinner);
+        setsColorSpinner();
+        hColor = findViewById(R.id.hColorSpinner);
+        sethColorSpinner();
+        sSize = findViewById(R.id.sSizeSpinner);
+        hSize = findViewById(R.id.hSizeSpinner);
         setSizeSpinners();
 
 
-       Intent intent = getIntent();
+        Intent intent = getIntent();
         if(intent != null)
         {
             m_bundle = intent.getBundleExtra("MAINCARTBUNDLE");
@@ -53,28 +53,36 @@ public class PantActivity extends AppCompatActivity {
 
     }
 
-    public  void setJColorSpinner()
+    public  void setsColorSpinner()
     {
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Black");
         arrayList.add("Grey");
-        arrayList.add("Denim");
+        arrayList.add("White");
+        arrayList.add("Red");
+        arrayList.add("Blue");
         arrayList.add("Tan");
+        arrayList.add("Maroon");
+        arrayList.add("Cream");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arrayList);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        jColor.setAdapter(arrayAdapter);
+        sColor.setAdapter(arrayAdapter);
     }
 
-    public  void setCColorSpinner()
+    public  void sethColorSpinner()
     {
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Black");
         arrayList.add("Grey");
-        arrayList.add("Olive");
+        arrayList.add("White");
+        arrayList.add("Red");
+        arrayList.add("Blue");
         arrayList.add("Tan");
+        arrayList.add("Maroon");
+        arrayList.add("Cream");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arrayList);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cColor.setAdapter(arrayAdapter);
+        hColor.setAdapter(arrayAdapter);
     }
 
     public  void setSizeSpinners()
@@ -87,8 +95,8 @@ public class PantActivity extends AppCompatActivity {
         arrayList.add("XL");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arrayList);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        jSize.setAdapter(arrayAdapter);
-        cSize.setAdapter(arrayAdapter);
+        sSize.setAdapter(arrayAdapter);
+        hSize.setAdapter(arrayAdapter);
     }
 
     public void goBack(View view) {
@@ -97,18 +105,18 @@ public class PantActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addJean(View view) {
-        m_cost += 54.99;
+    public void addSweat(View view) {
+        m_cost += 44.99;
         String key =  "Item" + (m_bundle.getInt("COUNTBUNDLE")+1);
-        m_bundle.putParcelable(key,new Item("Jean",jColor.getSelectedItem().toString(),jSize.getSelectedItem().toString(),54.99));
+        m_bundle.putParcelable(key,new Item("Sweatshirt",sColor.getSelectedItem().toString(),sSize.getSelectedItem().toString(),44.99));
         m_bundle.putInt("COUNTBUNDLE", m_bundle.getInt("COUNTBUNDLE")+1);
         updatePrice();
     }
 
-    public void addChino(View view) {
-        m_cost += 59.99;
+    public void addHoodie(View view) {
+        m_cost += 49.99;
         String key =  "Item" + (m_bundle.getInt("COUNTBUNDLE")+1);
-        m_bundle.putParcelable(key,new Item("Chinos",jColor.getSelectedItem().toString(),jSize.getSelectedItem().toString(),59.99));
+        m_bundle.putParcelable(key,new Item("Hoodie",hColor.getSelectedItem().toString(),hSize.getSelectedItem().toString(),49.99));
         m_bundle.putInt("COUNTBUNDLE", m_bundle.getInt("COUNTBUNDLE")+1);
         updatePrice();
     }
